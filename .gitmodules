@@ -1,0 +1,3 @@
+[submodule "vagrant-isucon"]
+	path = vagrant-isucon
+	url = https://github.com/sgykfjsm/vagrant-isucon.git
