@@ -33,11 +33,11 @@ Mac OS X + VirtualBox 5.0.28 + Vagrant 1.8.6で動作確認済です。
 > The provider 'virtualbox' that was requested to back the machine
 > 'default' is reporting that it isn't usable on this system. The
 > reason is shown below:
-> 
+>
 > Vagrant has detected that you have a version of VirtualBox installed
 > that is not supported. Please install one of the supported versions
 > listed below to use Vagrant:
-> 
+>
 > 4.0, 4.1, 4.2, 4.3
 
 Vagrantのバージョンが古い可能性があります。最新のVagrantを使用してください。
@@ -48,12 +48,12 @@ Vagrantのバージョンが古い可能性があります。最新のVagrantを
 > the "vboxsf" file system is not available. Please verify that
 > the guest additions are properly installed in the guest and
 > can work properly. The command attempted was:
-> 
+>
 > mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3` vagrant /vagrant
 > mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` vagrant /vagrant
-> 
+>
 > The error output from the last command was:
-> 
+>
 > /sbin/mount.vboxsf: mounting failed with the error: No such device
 
 [これと同じ現象](http://qiita.com/hapicky/items/a7f9d56588f96d005fad)と思われます。気にせず`vagrant provision`を実行してください。
@@ -76,3 +76,11 @@ Vagrantfileのネットワーク設定がデフォルトのままなので、サ
 ### Vagrantがない環境で試したい
 
 Ubuntu環境を用意できるのであれば[本家ansible](https://github.com/isucon/isucon6-qualify)をご利用ください。
+
+### vagrant sshするときに必要なパスワードがわからない
+
+実行するタイミングにもよるけど、大体は以下の様にBoxのVagrantfileの中に記載されている
+
+```console
+$ cat ~/.vagrant.d/boxes/ubuntu-VAGRANTSLASH-xenial64/20170914.2.0/virtualbox/Vagrantfile
+```
