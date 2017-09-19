@@ -84,3 +84,5 @@ Ubuntu環境を用意できるのであれば[本家ansible](https://github.com/
 ```console
 $ cat ~/.vagrant.d/boxes/ubuntu-VAGRANTSLASH-xenial64/20170914.2.0/virtualbox/Vagrantfile
 ```
+
+FYI: http://qiita.com/TKR/items/f27271c963de0033f7ff

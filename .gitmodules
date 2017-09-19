@@ -1,6 +1,3 @@
 [submodule "ansible-isucon"]
 	path = ansible-isucon
 	url = https://github.com/sgykfjsm/ansible-isucon.git
-[submodule "isucon6-qualifier-standalone/isucon6-qualify"]
-	path = isucon6-qualifier-standalone/isucon6-qualify
-	url = https://github.com/sgykfjsm/isucon6-qualify.git
