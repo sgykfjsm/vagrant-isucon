@@ -29,7 +29,6 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.ssh.insert_key = false
   config.vm.network "private_network", ip: "192.168.10.101"
   # config.vm.network "private_network", type: "dhcp"
 
@@ -65,7 +64,7 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
+    vb.memory = "4096"
   end
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
@@ -129,6 +128,9 @@ Vagrant.configure("2") do |config|
     rm -rf ${GOPATH}
 
     usermod -G sudo -a -s /bin/bash isucon
+
+    echo "ubuntu:ubuntu" | sudo chpasswd
+    echo "Password ubuntu's changed. Defualt password is 'ubuntu'"
 
     echo "Provisioning Successful"
   SHELL
